@@ -13,5 +13,11 @@ namespace MissingFocusedMaterialEntry
         {
             InitializeComponent();
         }
+
+        private async void Entry_Focused(object sender, FocusEventArgs e)
+        {
+            var entry = sender as Entry;
+            await DisplayAlert("Focused", entry.Placeholder, "Ok");
+        }
     }
 }
